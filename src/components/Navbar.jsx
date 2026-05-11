@@ -1,6 +1,6 @@
 // Navbar.jsx — Sticky navigation with mobile hamburger menu
 import { useState, useEffect } from "react";
-import { personal, social } from "../data/portfolioData";
+import { personal } from "../data/portfolioData";
 import "../styles/Navbar.css";
 
 // Nav links — add/remove sections here
