@@ -1,0 +1,80 @@
+/* ============================================================
+   Skills.css
+   ============================================================ */
+
+.skills__bg {
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Category card */
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  transition: border-color 0.3s, transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent top-edge bar on hover */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+
+.skill-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+}
+
+.skill-card:hover::before {
+  transform: scaleX(1);
+}
+
+.skill-card__category {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+/* Tag pills */
+.skill-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 5px 12px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  border-radius: 3px;
+  border: 1px solid rgba(79,255,176,0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.skill-tag:hover {
+  background: rgba(79,255,176,0.18);
+  transform: scale(1.04);
+}

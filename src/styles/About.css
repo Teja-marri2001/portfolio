@@ -1,0 +1,154 @@
+/* ============================================================
+   About.css
+   ============================================================ */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left: text block */
+.about__text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about__text p:last-child { margin-bottom: 0; }
+
+/* Quick facts strip */
+.about__facts {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.about__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about__fact-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.about__fact-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Right: profile card */
+.about__card {
+  position: relative;
+}
+
+.about__avatar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3/4;
+  margin: 0 auto;
+}
+
+/* Accent border offset */
+.about__avatar-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  top: 12px;
+  left: 12px;
+  z-index: 0;
+  transition: border-color 0.3s;
+}
+
+.about__avatar-wrapper:hover::before {
+  border-color: var(--accent);
+}
+
+.about__avatar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Placeholder avatar illustration */
+.about__avatar-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.about__avatar-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 2px solid var(--border);
+}
+
+.about__avatar-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Info chips below avatar */
+.about__info-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.about__chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.about__chip-icon { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .about__card { order: -1; }
+  .about__avatar-wrapper { max-width: 260px; }
+}
